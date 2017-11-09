@@ -13,22 +13,17 @@
 </template>
 
 <script>
+import myJson from '../../../../absence.json'
 import moment from 'moment'
 import DatepickerAgendaComponent from './DatepickerAgenda.vue'
 
 moment.locale('fr')
-let myJSON = {
-  dateDebut: '20-11-2017',
-  dateFin: '25-11-2017',
-  type: 'Maladie',
-  mot: 'Je suis en vacance mais je triche'
-}
 export default {
   data: function () {
     return {
-      dateDebut: myJSON.dateDebut,
+      dateDebut: myJson.dateDebut,
       isVisible: false,
-      date: moment(myJSON.dateDebut, 'DD-MM-YYYY')
+      date: moment(myJson.dateDebut, 'DD-MM-YYYY')
     }
   },
   components: {
@@ -58,6 +53,7 @@ export default {
       return this.date.format(this.format)
     },
     date_raw: function () {
+      myJson.dateDebut = this.date.format('DD-MM-YYYY')
       return this.date.format('DD-MM-YYYY')
     }
   }

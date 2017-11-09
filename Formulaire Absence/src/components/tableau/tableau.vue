@@ -18,11 +18,11 @@
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>20-11-2017</td>
-              <td>Maladie</td>
-              <td>Mal a la tête :D</td>
+              <td>Welde</td>
+              <td>{{ dateDebut }}</td>
+              <td>{{ dateFin }}</td>
+              <td>{{ type }}</td>
+              <td>{{ mot }}</td>
             </tr>
             <tr>
               <th scope="row">1</th>
@@ -49,5 +49,17 @@
     </div>
   </div>
 </template>
+
 <script>
+import myJson from '../../../absence.json'
+export default {
+  data: function () {
+    return {
+      mot: myJson.mot,
+      dateDebut: myJson.dateDebut,
+      dateFin: myJson.dateFin,
+      type: myJson.type
+    }
+  }
+}
 </script>
